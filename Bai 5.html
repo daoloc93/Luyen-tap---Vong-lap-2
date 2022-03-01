@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        input {
+            margin: 6px;
+        }
+
+    </style>
+
+</head>
+<body>
+Số tiền ban đầu = <input type="text" id = "pV">
+Số tháng cho vay = <input type="text" id = "n">
+Lãi suất hàng tháng (%)= <input type="text" id="i">
+<button onclick = tinh()>Tính lãi</button>
+<p id="result"></p>
+
+<script>
+
+    function tinh() {
+
+        let pV = parseFloat(document.getElementById("pV").value);
+        let n = parseFloat(document.getElementById("n").value);
+        let i = (parseFloat(document.getElementById("i").value))/100;
+
+        for (let m = 1; m<=n; m++) {
+            pV += (pV*i);
+            console.log("m===", m)
+        }
+
+        document.getElementById("result").innerHTML = "Tổng lãi qua " + n + " tháng là: " + pV;
+    }
+
+</script>
+</body>
+</html>
